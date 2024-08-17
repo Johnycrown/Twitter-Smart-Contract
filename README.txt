@@ -1,28 +1,38 @@
-REMIX DEFAULT WORKSPACE
+Twitter Smart Contract
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+This contract simulates basic Twitter functionalities on the Ethereum blockchain, allowing users to create, like, and unlike tweets.
 
-This workspace contains 3 directories:
+Features
+Create Tweet: Users can create tweets with a maximum length of 200 characters.
+View Tweets: Users can view individual tweets or all tweets by a specific author.
+Like/Unlike Tweet: Users can like or unlike tweets. The like count is tracked for each tweet.
+Owner Privileges: The contract owner can change the maximum tweet length.
+Contract Overview
+Structs:
+Twitte: Represents a tweet with id, author, content, timestamp, and likes.
+Mappings:
+tweets: Maps an address to an array of Twitte structs, representing the tweets authored by the address.
+Events:
+CreateTweet: Emitted when a new tweet is created.
+LikeTweet: Emitted when a tweet is liked.
+UnlikeTweet: Emitted when a tweet is unliked.
+Functions
+makeTwitte(string memory tweet): Creates a new tweet.
+getTwitt(address owner, uint i): Retrieves a specific tweet by an author.
+getAllTwitte(address owner): Retrieves all tweets by an author.
+changeTweeteLenght(uint16 tweetlengh): Allows the owner to change the maximum tweet length.
+likesATweet(address author, uint256 id): Increases the like count of a tweet.
+unlikeATweet(address author, uint256 id): Decreases the like count of a tweet.
+Contract Address
+The Twitter smart contract is deployed at the following address on the Ethereum blockchain:
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+0x315E33222f2F8B3061736fab0dF16BC2F877edFF
 
-SCRIPTS
+Owner Privileges
+The contract owner can modify the maximum tweet length using the changeTweeteLenght function.
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+Deployment
+The contract is deployed on the Ethereum blockchain and is compatible with Solidity version ^0.8.26.
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
-
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
-
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
-
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+License
+This project is licensed under the MIT License.
