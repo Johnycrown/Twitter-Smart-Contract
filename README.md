@@ -30,11 +30,17 @@ This contract simulates basic Twitter functionalities on the Ethereum blockchain
 **Functions**
   
   *makeTwitte(string memory tweet): Creates a new tweet.
+  
   *getTwitt(address owner, uint i): Retrieves a specific tweet by an author.
+  
   *getAllTwitte(address owner): Retrieves all tweets by an author.
+  
   *changeTweeteLenght(uint16 tweetlengh): Allows the owner to change the maximum tweet length.
+  
   *likesATweet(address author, uint256 id): Increases the like count of a tweet.
+  
   *unlikeATweet(address author, uint256 id): Decreases the like count of a tweet.
+  
   
 **Contract Address**
 
